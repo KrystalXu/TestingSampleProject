@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+	    http://www.springframework.org/schema/beans
+	    http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="ZhangYunyan" class="com.springtour.sample.ZhangYunyan">
+		<property name="clock" ref="SimpleClock" />
+		<property name="techLevelManager" ref="JdbcTechLevelManagerImpl" />
+	</bean>
+
+	<bean id="HelloWorld" class="com.springtour.sample.HelloWorld">
+		<property name="engineer" ref="ZhangYunyan" />
+	</bean>
+
+	<bean id="SimpleClock" class="com.springtour.sample.util.SimpleClock">
+	</bean>
+
+
+	<bean id="PlusAlgorithm" class="com.springtour.sample.PlusAlgorithm">
+		<constructor-arg value="3" />
+	</bean>
+	
+	<bean id="JdbcTechLevelManagerImpl" class="com.springtour.sample.JdbcTechLevelManagerImpl">
+		
+	</bean>
+
+</beans>
